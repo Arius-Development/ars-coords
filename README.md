@@ -1,9 +1,7 @@
 # ars-coords
-An easy simple script to copy coords
+An easy simple script to copy coords using ox_lib menu
 
-Simple FiveM script to copy coords to clipboard
-
-Use /coords to copy to clipboard.
+Use /coords open the menu.
 
 Dependency: 
 ox_lib
