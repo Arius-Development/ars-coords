@@ -1,8 +1,16 @@
 local coords 
 
-RegisterCommand('coords', function()
+RegisterCommand('coords', function(source, args)
+    
     local entityCoords = GetEntityCoords(cache.ped)
     local entityHeading = GetEntityHeading(cache.ped)
+    if args[1] == "v3" then
+        coords = "vector3("..math.ceil(entityCoords.x)..", "..math.ceil(entityCoords.y)..", "..math.ceil(entityCoords.z)..")"
+        lib.setClipboard(coords)
+        lib.notify({description = 'Copied coords '.. coords,position = 'top',style = {backgroundColor = '#2c2d30',color = '#cccbc8'},icon = 'location-dot',iconColor = '#cccbc8'})
+        return
+    end
+
     lib.registerMenu({
         id = 'coords_menu',
         title = 'Copy Coords',
@@ -40,6 +48,5 @@ RegisterCommand('coords', function()
             iconColor = '#cccbc8'
         })
     end)
-
     lib.showMenu('coords_menu')
 end)
