@@ -29,7 +29,16 @@ RegisterCommand('coords', function()
         }
     }, function(selected, scrollIndex, args)
         lib.setClipboard(coords)
-        print(coords)
+        lib.notify({
+            description = 'Copied coords '.. coords,
+            position = 'top',
+            style = {
+                backgroundColor = '#2c2d30',
+                color = '#cccbc8'
+            },
+            icon = 'location-dot',
+            iconColor = '#cccbc8'
+        })
     end)
 
     lib.showMenu('coords_menu')
