@@ -1,6 +1,6 @@
 # ars-coords
 
-An easy simple script to copy coords in different formats using ox_lib menu
+An easy sime FiveM script to copy coords to clipboard in different formats using ox_lib menu
 
 Formats:
 x, y, z
